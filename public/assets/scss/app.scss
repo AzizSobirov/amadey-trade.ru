@@ -1,0 +1,52 @@
+@import "base/mixins";
+
+@include font-face("Manrope", 400);
+@include font-face("Manrope", 500);
+@include font-face("Manrope", 600);
+@include font-face("Manrope", 700);
+@include font-face("Inter", 300);
+@include font-face("Inter", 400);
+@include font-face("Inter", 500);
+@include font-face("Inter", 600);
+@include font-face("Inter", 700);
+
+:root {
+  --primary: #1a2f53;
+  --secondary: #0e34ff;
+  --text-color: #1a2f53;
+  --gray: #5c6678;
+  --font-primary: "Manrope", sans-serif;
+  --font-secondary: "Inter", sans-serif;
+  --transition-ease: 0.3s ease;
+  --transition-bezier: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --content-width: 1300px;
+  --content-padding: 20px;
+}
+
+@include media("xl") {
+  :root {
+    --content-width: 1024px;
+  }
+}
+@include media("lg") {
+  :root {
+    --content-width: 768px;
+  }
+}
+@include media("md") {
+  :root {
+    --content-width: 640px;
+  }
+}
+@include media("sm") {
+  :root {
+    --content-width: 475px;
+    --content-padding: 16px;
+  }
+}
+
+@import "base/normalize";
+@import "base/helpers";
+@import "ui/index";
+@import "components/index";
+@import "index";

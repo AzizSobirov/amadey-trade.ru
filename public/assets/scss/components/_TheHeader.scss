@@ -1,0 +1,61 @@
+/* Styles for the TheHeader component */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: var(--transition-ease);
+  z-index: 10;
+
+  &__top {
+    padding: 6px 0;
+    color: #fff;
+    font-family: var(--font-secondary);
+    background: var(--primary);
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 30px;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      --icon-size: 16px;
+
+      &:nth-last-child(2) {
+        margin-left: auto;
+      }
+    }
+
+    .btn {
+      padding: 4px 10px;
+      height: 30px;
+      color: var(--text-color);
+      background: #dbe0eb;
+      border-radius: 4px;
+    }
+  }
+
+  &__content {
+    padding: 18px 0;
+    width: 100%;
+    background: #fff;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+}
