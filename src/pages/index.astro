@@ -1,13 +1,33 @@
 ---
 import App from "../App.astro";
-import { Section, Image, Icon, H1, H2, H3, H4} from "ui";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
 ---
 
 <App title="Главная">
+  <Fragment slot="head">
+    <style is:global>
+      .header .header__content {
+        border-bottom: none;
+      }
+    </style>
+  </Fragment>
+
   <main>
     <!-- Intro -->
     <Section name="intro">
-      <H1>Hello world</H1>
+      <div class="intro__swiper">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide slide-1"></div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="intro__stats">
+        <li class="intro__stats-item">
+          
+        </li>
+      </ul>
     </Section>
   </main>
 </App>

@@ -82,19 +82,19 @@
 }
 
 .text-h1 {
-  font-size: 48px;
-  font-weight: 400;
+  font-size: 44px;
+  font-weight: 300;
 }
 
 .text-h2 {
-  font-size: 34px;
-  font-weight: 400;
+  font-size: 36px;
+  font-weight: 300;
 
   @include media("lg") {
     font-size: 28px;
   }
   @include media("sm") {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 
@@ -105,4 +105,8 @@
   @include media("sm") {
     font-size: 18px;
   }
+}
+
+.text-p {
+  font-size: 20px;
 }

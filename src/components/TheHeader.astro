@@ -31,21 +31,99 @@ import { H2, Image, Icon } from "ui";
 
   <div class="header__content">
     <div class="container">
+      <div class="header__trigger" role="button" tabindex="0" aria-label="Меню">
+        <Icon src="menu.svg" />
+        <Icon src="close-white.svg" />
+      </div>
+
       <a href="/" class="header__logo" title="logo">
         <Image src="logo.svg" alt="logo" />
       </a>
 
       <nav class="header__menu">
+        <div
+          class="header__trigger"
+          role="button"
+          tabindex="0"
+          aria-label="Меню"
+        >
+          <Icon src="menu.svg" />
+          <Icon src="close-white.svg" />
+        </div>
+
         <ul class="menu">
-          <li class="menu-item active"><a href="/">Главная</a></li>
           <li class="menu-item menu-item-has-children">
-            <a href="/services">Услуги</a>
-            <!-- <ul class="sub-menu">
-              <li class="menu-item"><a href="#">Подбор новых авто</a></li>
-              <li class="menu-item"><a href="#">Эндоскопия</a></li>
-            </ul> -->
+            <a href="#">для офиса</a>
+            <ul class="sub-menu">
+              <li class="menu-item">
+                <a href="#">
+                  <Image src="services/1.png" />
+                  <span>Кабинеты руководителя</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#">
+                  <Image src="services/2.png" />
+                  <span>Мебель для персонала</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#">
+                  <Image src="services/3.png" />
+                  <span>Офисные кресла и стулья</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#">
+                  <Image src="services/4.png" />
+                  <span>Переговорные зоны</span>
+                </a>
+              </li>
+
+              <li class="menu-item">
+                <a href="#">
+                  <Image src="services/5.png" />
+                  <span>Мягкая мебель</span>
+                </a>
+              </li>
+
+              <li class="menu-item">
+                <a href="#">
+                  <Image src="services/6.png" />
+                  <span>Металлическая мебель</span>
+                </a>
+              </li>
+
+              <li class="menu-item">
+                <a href="#">
+                  <Image src="services/7.png" />
+                  <span>Гостиничная мебель</span>
+                </a>
+              </li>
+
+              <li class="menu-item">
+                <a href="#">
+                  <Image src="services/8.png" />
+                  <span>Аксессуары</span>
+                </a>
+              </li>
+
+              <li class="menu-item">
+                <a href="#">
+                  <Image src="services/9.png" />
+                  <span>Стойки ресепшен</span>
+                </a>
+              </li>
+            </ul>
           </li>
-          <li class="menu-item"><a href="/about">О нас</a></li>
+          <li class="menu-item"><a href="/">для Дома</a></li>
+          <li class="menu-item">
+            <a href="/services">Услуги</a>
+          </li>
+          <li class="menu-item"><a href="/portfolio">проекты</a></li>
+          <li class="menu-item"><a href="/career">Дизайнерам</a></li>
+          <li class="menu-item"><a href="/about">О компании</a></li>
+          <li class="menu-item"><a href="/reviews">Отзывы</a></li>
           <li class="menu-item"><a href="/contacts">Контакты</a></li>
         </ul>
       </nav>
@@ -58,9 +136,11 @@ import { H2, Image, Icon } from "ui";
           <Icon src="user.svg" />
         </a>
         <a href="#" class="btn">
+          <div class="badge" data-count="favourites">3</div>
           <Icon src="favourites.svg" />
         </a>
         <a href="#" class="btn">
+          <div class="badge" data-count="cart">2</div>
           <Icon src="cart.svg" />
         </a>
       </div>
