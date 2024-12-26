@@ -18,14 +18,77 @@ import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
       <div class="intro__swiper">
         <div class="swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide slide-1"></div>
+            <div
+              class="swiper-slide slide-1"
+              style="background-image: url('./assets/img/intro/1.png');"
+            >
+              <div class="title">Amadey</div>
+
+              <div class="scroller">
+                <div class="subtitle">Комфорт и стиль</div>
+                <div class="action">
+                  <div class="btn variant-solid">Smotret catalog</div>
+                </div>
+              </div>
+
+              <Image src="intro/2.png" />
+            </div>
+
+            <div class="swiper-slide slide-2">
+              <div class="slide-text">
+                <div class="title">
+                  <span>Ди</span>
+                  <span>- ва</span>
+                  <span>- ны</span>
+                </div>
+                <div class="subtitle">всего от 25 000 руб</div>
+                <div class="desc">диваны на долговечном металлокаркасе</div>
+
+                <a href="/catalog" class="btn variant-solid" title="Каталог">
+                  <span>смотреть каталог</span>
+                  <Icon src="arrow-up-right.svg" />
+                </a>
+              </div>
+
+              <Image class="slide-img" src="intro/3.png" />
+            </div>
           </div>
         </div>
+
+        <div class="swiper-pagination"></div>
       </div>
 
       <ul class="intro__stats">
         <li class="intro__stats-item">
-          
+          <H2>
+            <strong>15</strong>+
+          </H2>
+          <p class="font-medium">лет воплощаем идеи клиентов</p>
+        </li>
+        <li class="intro__stats-item">
+          <H2>
+            <strong>3700</strong>+
+          </H2>
+          <p class="font-medium">Более 3700 позиций мебели в магазине</p>
+        </li>
+        <li class="intro__stats-item">
+          <H2>
+            <strong>Топ-5</strong>
+          </H2>
+          <p class="font-medium">дилеров офисной мебели в Казани</p>
+        </li>
+
+        <li class="intro__stats-item">
+          <H2>
+            <strong>10</strong>+
+          </H2>
+          <p class="font-medium">лет средний опыт сотрудников</p>
+        </li>
+        <li class="intro__stats-item">
+          <H2>
+            <strong>22</strong>+
+          </H2>
+          <p class="font-medium">производителя мебели в одном месте</p>
         </li>
       </ul>
     </Section>

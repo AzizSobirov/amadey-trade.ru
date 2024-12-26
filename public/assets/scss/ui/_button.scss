@@ -6,17 +6,18 @@
   transition: var(--transition-ease);
 
   &.variant-solid {
-    padding: 10px 30px;
-    color: var(--primary);
+    width: 240px;
+    height: 54px;
+    color: #fff;
     font-size: 16px;
+    font-weight: 700;
     font-family: var(--font-secondary);
-    background: #fff;
-    border-radius: 5px;
+    text-transform: uppercase;
+    background: var(--primary);
+    border-radius: 8px;
     white-space: nowrap;
-
-    @include media("xs") {
-      font-size: 14px;
-    }
+    gap: 8px;
+    --icon-size: 20px;
   }
 
   &.variant-outline {
