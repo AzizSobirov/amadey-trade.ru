@@ -49,12 +49,11 @@ if (header) {
 let introSwiper = new Swiper(".intro__swiper .swiper", {
   slidesPerView: 1,
   loop: true,
-  initialSlide: 1,
   effect: "fade",
-  // autoplay: {
-  //   delay: 16000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 10000,
+    disableOnInteraction: false,
+  },
   pagination: {
     el: ".intro__swiper .swiper-pagination",
     clickable: true,

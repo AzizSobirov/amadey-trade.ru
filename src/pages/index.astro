@@ -27,7 +27,10 @@ import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
               <div class="scroller">
                 <div class="subtitle">Комфорт и стиль</div>
                 <div class="action">
-                  <div class="btn variant-solid">Smotret catalog</div>
+                  <a href="/catalog" class="btn variant-white" title="Каталог">
+                    <span>смотреть каталог</span>
+                    <Icon src="arrow-up-right-primary.svg" />
+                  </a>
                 </div>
               </div>
 
@@ -58,6 +61,10 @@ import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
         <div class="swiper-pagination"></div>
       </div>
 
+      <div class="intro__img">
+        <Image src="intro/4.png" />
+      </div>
+
       <ul class="intro__stats">
         <li class="intro__stats-item">
           <H2>
@@ -69,7 +76,9 @@ import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
           <H2>
             <strong>3700</strong>+
           </H2>
-          <p class="font-medium">Более 3700 позиций мебели в магазине</p>
+          <p class="font-medium">
+            <span>Более 3700</span> позиций мебели в магазине
+          </p>
         </li>
         <li class="intro__stats-item">
           <H2>
