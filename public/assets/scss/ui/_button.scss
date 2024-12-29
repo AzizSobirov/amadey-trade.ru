@@ -18,6 +18,21 @@
     white-space: nowrap;
     gap: 8px;
     --icon-size: 20px;
+
+    &.size-small {
+      width: 140px;
+      height: 41px;
+      font-size: 12px;
+      border-radius: 4px;
+
+      @include media("sm") {
+        padding: 10px 15px;
+        width: fit-content;
+        height: fit-content;
+        font-size: 10px;
+        --icon-size: 14px;
+      }
+    }
   }
 
   &.variant-white {
