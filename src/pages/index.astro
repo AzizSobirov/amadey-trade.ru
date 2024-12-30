@@ -1,11 +1,47 @@
 ---
 import App from "../App.astro";
 import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import Product from "../components/TheProduct.astro";
+
+const products = [
+  {
+    id: 1,
+    title: "Кресло руководителя ",
+    description: "Кресло с высокой спинкой и подголовником DAT/601GO/P",
+    stars: 4.5,
+    price: 60500,
+    real_price: 72200,
+  },
+  {
+    id: 2,
+    title: "Диван Ланкастер",
+    description: "2х местный диван из кожи Ш1620хГ800хВ800",
+    stars: 4,
+    price: 120500,
+    real_price: 72200,
+  },
+  {
+    id: 3,
+    title: "Кресло Тревизо",
+    description: "Удобное офисное кресло из качественной экокожи",
+    stars: 5,
+    price: 34200,
+    real_price: 72200,
+  },
+  {
+    id: 4,
+    title: "Кресло руководителя ",
+    description: "Кресло с высокой спинкой и подголовником DAT/601GO/P",
+    stars: 4.5,
+    price: 60500,
+    real_price: 72200,
+  },
+];
 ---
 
 <App title="Главная">
   <Fragment slot="head">
-    <style is:global>
+    <style is:inline>
       .header .header__content {
         border-bottom: none;
       }
@@ -266,6 +302,40 @@ import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
                 >
               </div>
             </a>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Products -->
+    <Section name="products">
+      <div class="title">
+        <div class="swiper-btn btn-prev">
+          <Image src="icons/arrow-left.svg" />
+        </div>
+        <H2> <strong>Популярные</strong> товары</H2>
+        <div class="swiper-btn btn-next">
+          <Image src="icons/arrow-right.svg" />
+        </div>
+      </div>
+
+      <div class="products__swiper">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            {
+              products.map((product, index) => (
+                <Product
+                  class="swiper-slide"
+                  id={index + 1}
+                  payment_type="cash"
+                  title="Кресло руководителя "
+                  stars={4.5}
+                  description="Кресло с высокой спинкой и подголовником DAT/601GO/P"
+                  price={60500}
+                  real_price={72200}
+                />
+              ))
+            }
           </div>
         </div>
       </div>

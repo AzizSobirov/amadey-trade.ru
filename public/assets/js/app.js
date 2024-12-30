@@ -1,3 +1,59 @@
+const store = {
+  cart: [],
+  favourites: [],
+  init() {
+    this.cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    this.favourites = JSON.parse(localStorage.getItem("favourites") || "[]");
+    this.update();
+  },
+  update() {
+    const cartCount = document.querySelector("[data-count='cart']");
+    const favouritesCount = document.querySelector("[data-count='favourites']");
+
+    cartCount.textContent = this.cart.length;
+    favouritesCount.textContent = this.favourites.length;
+
+    if (this.cart.length) {
+      cartCount.style.display = "flex";
+    } else {
+      cartCount.style.display = "none";
+    }
+
+    if (this.favourites.length) {
+      favouritesCount.style.display = "flex";
+    } else {
+      favouritesCount.style.display = "none";
+    }
+  },
+  addToCart(product) {
+    this.cart.push(product);
+    this.update();
+    localStorage.setItem("cart", JSON.stringify(this.cart));
+  },
+  removeFromCart(product) {
+    this.cart = this.cart.filter((item) => item.id !== product.id);
+    this.update();
+    localStorage.setItem("cart", JSON.stringify(this.cart));
+  },
+  addToFavourites(product) {
+    this.favourites.push(product);
+    this.update();
+    localStorage.setItem("favourites", JSON.stringify(this.favourites));
+  },
+  removeFromFavourites(product) {
+    this.favourites = this.favourites.filter((item) => item.id !== product.id);
+    this.update();
+    localStorage.setItem("favourites", JSON.stringify(this.favourites));
+  },
+  clearCart() {
+    this.cart = [];
+    this.update();
+    localStorage.setItem("cart", JSON.stringify(this.cart));
+  },
+};
+store.init();
+
+// header
 const header = document.querySelector(".header");
 if (header) {
   const triggers = header.querySelectorAll(".header__trigger");
@@ -65,8 +121,8 @@ let projectsSwiper = new Swiper(".projects .projects__swiper .swiper", {
   slidesPerView: "auto",
   spaceBetween: 8,
   navigation: {
-    nextEl: ".projects .btn-next",
-    prevEl: ".projects .btn-prev",
+    nextEl: ".projects .title .btn-next",
+    prevEl: ".projects .title .btn-prev",
   },
   breakpoints: {
     476: {
@@ -76,4 +132,44 @@ let projectsSwiper = new Swiper(".projects .projects__swiper .swiper", {
       spaceBetween: 24,
     },
   },
+});
+
+// products swiper
+let productsSwiper = new Swiper(".products .products__swiper .swiper", {
+  slidesPerView: "auto",
+  spaceBetween: 8,
+  navigation: {
+    nextEl: ".products .title .btn-next",
+    prevEl: ".products .title .btn-prev",
+  },
+  breakpoints: {
+    476: {
+      spaceBetween: 15,
+    },
+    1025: {
+      spaceBetween: 24,
+    },
+  },
+});
+
+const getAllProducts = document.querySelectorAll(".product");
+getAllProducts.forEach((product) => {
+  const title = product.querySelector("[data-title]");
+  const price = product.querySelector("[data-price]");
+  const realPrice = product.querySelector("[data-real-price]");
+
+  const btnFavourite = product.querySelector("[data-btn-favourite]");
+  const btnOrder = product.querySelector("[data-btn-order]");
+
+  const data = {
+    id: parseFloat(product.dataset.id),
+    color: product.dataset.color,
+    title: title.textContent,
+    price: parseFloat(price.dataset.price),
+    realPrice: parseFloat(realPrice.dataset.realPrice),
+    count: parseFloat(product.dataset.count),
+  };
+
+  btnFavourite.addEventListener("click", () => store.addToFavourites(data));
+  btnOrder.addEventListener("click", () => store.addToCart(data));
 });

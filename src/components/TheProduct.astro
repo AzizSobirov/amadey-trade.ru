@@ -1,0 +1,103 @@
+---
+import { Image, Icon } from "ui";
+
+interface Props {
+  class?: string;
+  id: number;
+  payment_type: "card" | "cash";
+  title: string;
+  stars: number;
+  description: string;
+  price: number;
+  real_price: number;
+}
+
+const {
+  class: classname,
+  id,
+  payment_type,
+  title,
+  stars,
+  description,
+  price,
+  real_price,
+} = Astro.props;
+
+const formatPrice = (price: number) => {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+};
+---
+
+<div
+  class="product"
+  class:list={classname}
+  data-id={id}
+  data-color="Коричневый, дуб"
+  data-count={1}
+>
+  <div class="product__img">
+    <div class="product__payment">
+      {
+        payment_type === "cash" ? (
+          <div class="product__payment-cash">В наличии</div>
+        ) : (
+          <div class="product__payment-order">Под заказ</div>
+        )
+      }
+    </div>
+
+    <div
+      class="product__like"
+      role="checkbox"
+      aria-label="Добавить в избранное"
+      aria-checked="false"
+      tabindex="0"
+      data-btn-favourite
+    >
+    </div>
+
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <Image src={`products/${id}.png`} data-img />
+        </div>
+        <div class="swiper-slide">
+          <Image src={`products/2.png`} />
+        </div>
+        <div class="swiper-slide">
+          <Image src={`products/3.png`} />
+        </div>
+        <div class="swiper-slide">
+          <Image src={`products/4.png`} />
+        </div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+  <div class="product__content">
+    <div class="product-title" data-title set:html={title} />
+    <div class="product-stars"></div>
+    <p class="product-desc" set:html={description} />
+    <div class="product-price">
+      <div class="price" data-price={price}>
+        {formatPrice(price)}
+        <span>₽</span>
+      </div>
+      <div class="real-price" data-real-price={real_price}>
+        {formatPrice(real_price)}
+        <span>₽</span>
+      </div>
+    </div>
+    <div
+      class="btn variant-buy size-small"
+      role="button"
+      aria-label="Добавить в корзину"
+      tabindex="0"
+      data-btn-order
+    >
+      <Icon src="cart.svg" /> в корзину
+    </div>
+  </div>
+</div>
