@@ -125,4 +125,19 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
+
+  @include media("sm") {
+    gap: 10px;
+
+    .swiper-btn {
+      width: 36px;
+      height: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
 }

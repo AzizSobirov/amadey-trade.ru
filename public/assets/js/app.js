@@ -59,3 +59,21 @@ let introSwiper = new Swiper(".intro__swiper .swiper", {
     clickable: true,
   },
 });
+
+// projects swiper
+let projectsSwiper = new Swiper(".projects .projects__swiper .swiper", {
+  slidesPerView: "auto",
+  spaceBetween: 8,
+  navigation: {
+    nextEl: ".projects .btn-next",
+    prevEl: ".projects .btn-prev",
+  },
+  breakpoints: {
+    476: {
+      spaceBetween: 15,
+    },
+    1025: {
+      spaceBetween: 24,
+    },
+  },
+});

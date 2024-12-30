@@ -21,6 +21,7 @@
 
     &.size-small {
       width: 140px;
+      min-height: 41px;
       height: 41px;
       font-size: 12px;
       border-radius: 4px;
@@ -29,8 +30,14 @@
         padding: 10px 15px;
         width: fit-content;
         height: fit-content;
+        min-height: auto;
         font-size: 10px;
         --icon-size: 14px;
+      }
+      @include media("xs") {
+        padding: 8px 12px;
+        font-size: 8px;
+        --icon-size: 12px;
       }
     }
   }
