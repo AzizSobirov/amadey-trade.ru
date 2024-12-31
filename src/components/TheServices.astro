@@ -1,0 +1,56 @@
+---
+import App from "../App.astro";
+import { Section, H2, Image, Icon } from "ui";
+---
+
+<Section name="services">
+  <H2>
+    Также мы
+    <strong>оказываем услуги:</strong>
+  </H2>
+  <div class="services__list">
+    <a href="/service" class="services__item">
+      <Icon src="notes.svg" />
+      <p>
+        <strong class="uppercase">Дизайн</strong><br />
+        интерьера
+      </p>
+    </a>
+    <a href="/service" class="services__item">
+      <Icon src="photos-stack.svg" />
+      <p>
+        <strong class="uppercase">Подбор</strong>
+        мебели <br /> по фотографии
+      </p>
+    </a>
+    <a href="/service" class="services__item">
+      <Icon src="folder-open.svg" />
+      <p>
+        <strong class="uppercase">Комплект</strong><br />
+        рабочих чертежей
+      </p>
+    </a>
+    <a href="/service" class="services__item">
+      <Icon src="mebel.svg" />
+      <p>
+        <strong class="uppercase">Изготовление</strong><br />
+        по индивидуальным <br /> размерам
+      </p>
+    </a>
+    <a href="/service" class="services__item">
+      <Icon src="delete-card.svg" />
+      <p>
+        <strong class="uppercase">Вывоз</strong>
+        мусора <br />
+        и упаковки
+      </p>
+    </a>
+    <a href="/service" class="services__item">
+      <Icon src="delivery.svg" />
+      <p>
+        <strong class="uppercase">Выезд </strong><br />
+        специалиста
+      </p>
+    </a>
+  </div>
+</Section>

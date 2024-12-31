@@ -35,27 +35,30 @@ const formatPrice = (price: number) => {
   data-color="Коричневый, дуб"
   data-count={1}
 >
-  <div class="product__img">
-    <div class="product__payment">
+  <div class="product__top">
+    <div class="product__top-payment">
       {
         payment_type === "cash" ? (
-          <div class="product__payment-cash">В наличии</div>
+          <div class="product__top-cash">В наличии</div>
         ) : (
-          <div class="product__payment-order">Под заказ</div>
+          <div class="product__top-order">Под заказ</div>
         )
       }
     </div>
 
     <div
-      class="product__like"
+      class="product__top-favourite"
       role="checkbox"
       aria-label="Добавить в избранное"
       aria-checked="false"
       tabindex="0"
       data-btn-favourite
+      data-checked="false"
     >
     </div>
+  </div>
 
+  <div class="product__img">
     <div class="swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -72,13 +75,31 @@ const formatPrice = (price: number) => {
         </div>
       </div>
 
-      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
+
+    <div class="swiper-pagination"></div>
   </div>
 
   <div class="product__content">
     <div class="product-title" data-title set:html={title} />
-    <div class="product-stars"></div>
+    <div class="product-stars">
+      {
+        [...Array(5)].map((_, index) => {
+          if (index < Math.floor(stars)) {
+            // Full Star
+            return <Icon src="star.svg" />;
+          } else if (index < Math.ceil(stars)) {
+            // Half Star
+            return <Icon src="star-half.svg" />;
+          } else {
+            // Empty Star
+            return <Icon src="star-empty.svg" />;
+          }
+        })
+      }
+    </div>
     <p class="product-desc" set:html={description} />
     <div class="product-price">
       <div class="price" data-price={price}>
@@ -97,7 +118,8 @@ const formatPrice = (price: number) => {
       tabindex="0"
       data-btn-order
     >
-      <Icon src="cart.svg" /> в корзину
+      <Icon src="cart-white.svg" />
+      <span>в корзину</span>
     </div>
   </div>
 </div>

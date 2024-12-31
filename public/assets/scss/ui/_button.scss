@@ -42,6 +42,43 @@
     }
   }
 
+  &.variant-buy {
+    width: 240px;
+    height: 54px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    background: var(--primary);
+    border-radius: 8px;
+    white-space: nowrap;
+    gap: 8px;
+    --icon-size: 20px;
+
+    &.size-small {
+      width: 124px;
+      min-height: 41px;
+      height: 41px;
+      font-size: 12px;
+      border-radius: 4px;
+
+      @include media("sm") {
+        padding: 10px 15px;
+        width: fit-content;
+        height: fit-content;
+        min-height: auto;
+        font-size: 10px;
+        --icon-size: 14px;
+      }
+      @include media("xs") {
+        padding: 8px 12px;
+        font-size: 8px;
+        --icon-size: 12px;
+      }
+    }
+  }
+
   &.variant-white {
     width: 240px;
     height: 54px;

@@ -9,6 +9,7 @@ const store = {
   update() {
     const cartCount = document.querySelector("[data-count='cart']");
     const favouritesCount = document.querySelector("[data-count='favourites']");
+    const products = document.querySelectorAll(".product");
 
     cartCount.textContent = this.cart.length;
     favouritesCount.textContent = this.favourites.length;
@@ -24,8 +25,34 @@ const store = {
     } else {
       favouritesCount.style.display = "none";
     }
+
+    products.forEach((product) => {
+      const favouriteBtn = product.querySelector("[data-btn-favourite]");
+      const orderBtn = product.querySelector("[data-btn-order] ");
+      const orderBtnText = orderBtn.querySelector("span");
+
+      const isFavouritesExists = this.favourites.find(
+        (item) => item.id == product.dataset.id
+      );
+      favouriteBtn.dataset.checked = !!isFavouritesExists;
+
+      const isCartExists = this.cart.find(
+        (item) => item.id == product.dataset.id
+      );
+
+      if (isCartExists) {
+        orderBtnText.textContent = "В корзине";
+        orderBtn.addEventListener("click", () => {
+          window.location.href = "/profile/cart";
+        });
+      }
+    });
+
+    localStorage.setItem("cart", JSON.stringify(this.cart));
+    localStorage.setItem("favourites", JSON.stringify(this.favourites));
   },
   addToCart(product) {
+    if (this.cart.find((item) => item.id === product.id)) return;
     this.cart.push(product);
     this.update();
     localStorage.setItem("cart", JSON.stringify(this.cart));
@@ -33,17 +60,17 @@ const store = {
   removeFromCart(product) {
     this.cart = this.cart.filter((item) => item.id !== product.id);
     this.update();
-    localStorage.setItem("cart", JSON.stringify(this.cart));
   },
-  addToFavourites(product) {
-    this.favourites.push(product);
+  toggleFavourites(product) {
+    if (this.favourites.find((item) => item.id === product.id)) {
+      this.favourites = this.favourites.filter(
+        (item) => item.id !== product.id
+      );
+    } else {
+      this.favourites.push(product);
+    }
+
     this.update();
-    localStorage.setItem("favourites", JSON.stringify(this.favourites));
-  },
-  removeFromFavourites(product) {
-    this.favourites = this.favourites.filter((item) => item.id !== product.id);
-    this.update();
-    localStorage.setItem("favourites", JSON.stringify(this.favourites));
   },
   clearCart() {
     this.cart = [];
@@ -135,22 +162,22 @@ let projectsSwiper = new Swiper(".projects .projects__swiper .swiper", {
 });
 
 // products swiper
-let productsSwiper = new Swiper(".products .products__swiper .swiper", {
-  slidesPerView: "auto",
-  spaceBetween: 8,
-  navigation: {
-    nextEl: ".products .title .btn-next",
-    prevEl: ".products .title .btn-prev",
-  },
-  breakpoints: {
-    476: {
-      spaceBetween: 15,
+let productsSwiper = new Swiper(
+  ".products .products__swiper .products-swiper",
+  {
+    slidesPerView: "auto",
+    spaceBetween: 8,
+    navigation: {
+      nextEl: ".products .title .btn-next",
+      prevEl: ".products .title .btn-prev",
     },
-    1025: {
-      spaceBetween: 24,
+    breakpoints: {
+      476: {
+        spaceBetween: 15,
+      },
     },
-  },
-});
+  }
+);
 
 const getAllProducts = document.querySelectorAll(".product");
 getAllProducts.forEach((product) => {
@@ -170,6 +197,31 @@ getAllProducts.forEach((product) => {
     count: parseFloat(product.dataset.count),
   };
 
-  btnFavourite.addEventListener("click", () => store.addToFavourites(data));
+  btnFavourite.addEventListener("click", () => store.toggleFavourites(data));
   btnOrder.addEventListener("click", () => store.addToCart(data));
+
+  let swiper = new Swiper(product.querySelector(".swiper"), {
+    slidesPerView: 1,
+    loop: true,
+    pagination: {
+      el: product.querySelector(".swiper-pagination"),
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `<span class="${className}" style="width: calc(100% / ${this.slides.length}); "></span>`;
+      },
+    },
+    navigation: {
+      nextEl: product.querySelector(".swiper-button-next"),
+      prevEl: product.querySelector(".swiper-button-prev"),
+    },
+  });
+
+  // Add custom behavior for pagination hover
+  const pagination = product.querySelector(".swiper-pagination");
+  const bulletsList = pagination.querySelectorAll("span");
+  bulletsList.forEach((bullet, index) => {
+    bullet.addEventListener("mouseover", () => {
+      swiper.slideTo(index);
+    });
+  });
 });

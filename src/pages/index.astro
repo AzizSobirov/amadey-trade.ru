@@ -2,6 +2,7 @@
 import App from "../App.astro";
 import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
 import Product from "../components/TheProduct.astro";
+import Services from "../components/TheServices.astro";
 
 const products = [
   {
@@ -34,6 +35,14 @@ const products = [
     description: "Кресло с высокой спинкой и подголовником DAT/601GO/P",
     stars: 4.5,
     price: 60500,
+    real_price: 72200,
+  },
+  {
+    id: 5,
+    title: "Диван Ланкастер",
+    description: "2х местный диван из кожи Ш1620хГ800хВ800",
+    stars: 1,
+    price: 120500,
     real_price: 72200,
   },
 ];
@@ -320,24 +329,65 @@ const products = [
       </div>
 
       <div class="products__swiper">
-        <div class="swiper">
+        <div class="swiper products-swiper">
           <div class="swiper-wrapper">
             {
               products.map((product, index) => (
                 <Product
                   class="swiper-slide"
                   id={index + 1}
-                  payment_type="cash"
-                  title="Кресло руководителя "
-                  stars={4.5}
-                  description="Кресло с высокой спинкой и подголовником DAT/601GO/P"
-                  price={60500}
-                  real_price={72200}
+                  payment_type={index % 2 ? "cash" : "card"}
+                  title={product.title}
+                  stars={product.stars}
+                  description={product.description}
+                  price={product.price}
+                  real_price={product.real_price}
                 />
               ))
             }
           </div>
         </div>
+      </div>
+    </Section>
+
+    <!-- Services -->
+    <Services />
+
+    <!-- Showroom -->
+    <Section name="showroom">
+      <div class="showroom__content">
+        <div class="showroom__text">
+          <H2>Зайдите в наш <br /> <strong>шоу-рум</strong></H2>
+          <ul class="showroom__list">
+            <li class="showroom__list-item">
+              <strong>
+                Адрес шоу-рума: <br />
+                Казань, ул. Сулеймановой. д. 3</strong
+              >
+            </li>
+            <li class="showroom__list-item">
+              <strong>
+                Понедельник-Пятница:  <br />
+                9:00 — 18:00</strong
+              >
+            </li>
+            <li class="showroom__list-item">
+              <strong>Телефоны:</strong>
+              <br />
+              <a href="tel:88003020528"> 8-800-302-05-28 </a><br />
+              <a href="tel:+78435283132"> +7(843) 528-31-32</a>
+            </li>
+            <li class="showroom__list-item">
+              <strong>WhatsApp, Telegram, Viber:</strong>
+              <br />
+              <a href="tel:+79393850087">+7 (939) 385-00-87</a>
+            </li>
+            <li class="showroom__list-item">
+              <Image src="whatsapp-qr.svg" />
+            </li>
+          </ul>
+        </div>
+        <Image class="showroom__img" src="showroom.png" />
       </div>
     </Section>
   </main>
