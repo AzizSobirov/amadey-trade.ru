@@ -1,0 +1,103 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import Product from "../components/TheProduct.astro";
+import Services from "../components/TheServices.astro";
+import Breadcrumb from "../components/TheBreadcrumb.astro";
+---
+
+<App title="Дизайнерам">
+  <main>
+    <!-- Career -->
+    <Section name="career">
+      <Breadcrumb list={[{ name: "Дизайнерам", href: "#" }]} />
+
+      <div class="career__content">
+        <div class="career__item">
+          <Image src="career/1.png" />
+          <div class="career__item-text">
+            <H1>Дизайнерам</H1>
+            <div class="career__item-title">
+              Приглашаем к сотрудничеству талантливых дизайнеров, архитекторов и
+              декораторов
+            </div>
+            <p class="career__item-desc">
+              Мы считаем партнерство важным аспектом нашей работы и стремимся к
+              отношениям, основанным на честности и взаимном доверии при
+              реализации бизнес-идей в области современной мебели высокого
+              качества. Просмотреть наши проекты можно в нашем портфолио.
+            </p>
+          </div>
+        </div>
+        <div class="career__item">
+          <Image src="career/2.png" />
+          <div class="career__item-text">
+            <div class="career__item-title">
+              Подберем мебель <br /> по вашему дизайну
+            </div>
+            <p class="career__item-desc">
+              Если вы занимаетесь оформлением интерьеров жилых или коммерческих
+              помещений, мы готовы предложить вам уникальные условия
+              сотрудничества, предоставить 3D модели.
+            </p>
+          </div>
+        </div>
+        <div class="career__item">
+          <Image src="career/3.png" />
+          <div class="career__item-text">
+            <div class="career__item-title">
+              Производим мебель по <br /> индивидуальному проекту
+            </div>
+            <p class="career__item-desc">
+              Мы считаем партнерство важным аспектом нашей работы и стремимся к
+              отношениям, основанным на честности и взаимном доверии при
+              реализации бизнес-идей в области современной мебели высокого
+              качества. Просмотреть наши проекты можно в нашем портфолио.
+            </p>
+          </div>
+        </div>
+
+        <div class="career__item">
+          <Image src="career/4.png" />
+          <div class="career__item-text">
+            <div class="career__item-title">
+              Предоставим место для встречи <br /> с клиентами и образцы
+            </div>
+            <p class="career__item-desc">
+              Если вы занимаетесь оформлением интерьеров жилых или коммерческих
+              помещений, мы готовы предложить вам уникальные условия
+              сотрудничества, предоставить 3D модели.
+            </p>
+          </div>
+        </div>
+
+        <div class="career__item">
+          <Image src="career/5.png" />
+          <div class="career__item-text">
+            <div class="career__item-title">
+              Разместим в наших соцсетях <br />
+              и информационных площадках
+            </div>
+            <p class="career__item-desc">
+              Мы опубликуем на сайте и в соц.сетях проекты от наших партнеров с
+              упоминанием и ссылками на них.
+            </p>
+          </div>
+        </div>
+
+        <div class="career__item">
+          <Image src="career/6.png" />
+          <div class="career__item-text">
+            <div class="career__item-title">Выплачиваем вознаграждение</div>
+            <p class="career__item-desc">
+              Мы предлагаем гарантированное дизайнерское вознаграждение, которое
+              выплачиваем в точно указанные сроки и в полном объеме. Мы
+              тщательно заботимся о своей репутации и следим за точным
+              исполнением обязательств со своей стороны.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Section>
+  </main>
+</App>

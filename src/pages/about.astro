@@ -1,0 +1,88 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import Product from "../components/TheProduct.astro";
+import Services from "../components/TheServices.astro";
+import Breadcrumb from "../components/TheBreadcrumb.astro";
+---
+
+<App title="О компании">
+  <main>
+    <!-- About -->
+    <Section name="about">
+      <Breadcrumb list={[{ name: "О компании", href: "#" }]} />
+
+      <div class="about__header">
+        <H1>О компании</H1>
+        <p class="about__header-desc">
+          «Амадей» — это больше, чем ателье мебели, дизайн интерьеров или
+          интернет-магазин.
+        </p>
+      </div>
+
+      <div class="about__content">
+        <div class="about__item">
+          <Image src="about/1.png" />
+          <div class="about__item-text">
+            <div class="about__item-title">Мы создаем уют</div>
+            <p class="about__item-desc">
+              От пола до потолка и от стены до стены, бесконечные варианты для
+              преобразования пространства в зависимости от ваших потребностей.
+              <br /><br />
+              Где бы вы ни находились, дома или в офисе, работайте и отдыхайте в
+              атмосфере неповторимого интерьера и удобной мебели.
+            </p>
+          </div>
+        </div>
+        <div class="about__item">
+          <Image src="about/2.png" />
+          <div class="about__item-text">
+            <div class="about__item-title">
+              Мы полагаемся на наших <br /> сотрудников
+            </div>
+            <p class="about__item-desc">
+              Благодаря безграничному потенциалу увлеченных людей нашей
+              команды мы объединены общим видением. 
+              <br /><br />
+              Наши сотрудники – это взаимодействие двух поколений: идеи молодых дизайнеров
+              и опыт руководителей проекта, которые приносят культурное разнообразие
+              и преданность клиентам.
+            </p>
+          </div>
+        </div>
+        <div class="about__item">
+          <Image src="about/3.png" />
+          <div class="about__item-text">
+            <div class="about__item-title">
+              Мы поддерживаем <br />
+              непрерывное обучение
+            </div>
+            <p class="about__item-desc">
+              В быстро меняющемся мире мы ищем разнообразные идеи и возможности
+              для расширения наших знаний.  Применяя эти знания каждый день, мы
+              трансформируем наш бизнес, повышаем производительность и внедряем
+              инновации, которые превосходят ожидания клиентов.
+            </p>
+          </div>
+        </div>
+
+        <div class="about__item">
+          <Image src="about/4.png" />
+          <div class="about__item-text">
+            <div class="about__item-title">
+              Внимательны <br />
+              к нашим клиентам
+            </div>
+            <p class="about__item-desc">
+              Мы воплощаем идеи клиентов и предлагаем свои, чтобы создавать
+              вдохновляющие интерьеры, которые обогащают жизнь людей и их
+              бизнес. Вместе с нашими партнерами мы строим взаимовыгодные
+              отношения, выполняем свои обязательства и создаем ценность,
+              используя наши знания, таланты и опыт.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Section>
+  </main>
+</App>

@@ -1,0 +1,40 @@
+---
+interface Props {
+  list: Array<{ name: string; href?: string }>;
+}
+
+const { list } = Astro.props;
+
+const arr = [{ name: "Главная страница", href: "/" }, ...list];
+---
+
+<div class="breadcrumb">
+  {
+    arr.map((item) => (
+      <>
+        <a href={item.href} class="breadcrumb__item">
+          {item.name}
+        </a>
+        {arr.indexOf(item) !== arr.length - 1 && (
+          <div class="icon">
+            <svg
+              width="6"
+              height="10"
+              viewBox="0 0 6 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1.04102L4.25192 4.29314C4.64243 4.68367 4.64242 5.31681 4.2519 5.70733L1 8.95923"
+                stroke="#5C6678"
+                stroke-opacity="0.3"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+        )}
+      </>
+    ))
+  }
+</div>
