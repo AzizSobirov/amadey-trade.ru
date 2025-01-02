@@ -1,0 +1,51 @@
+---
+import { Image, Icon } from "ui";
+---
+
+<div class="chat">
+  <div class="chat__content">
+    <div
+      class="chat__content-close"
+      role="button"
+      tabindex="0"
+      aria-label="Закрыть чат"
+    >
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 15 15"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1.4165 1.41626L13.0838 13.0835"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"></path>
+        <path
+          d="M13.0835 1.41626L7.24987 7.24989L1.41623 13.0835"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"></path>
+      </svg>
+    </div>
+    <div class="chat__content-title">Екатерина:</div>
+    <p class="chat__content-desc">
+      Добрый день! У нас специальное предложение. Хотите узнать как получить
+      скидку более 5%
+    </p>
+    <form class="chat__content-form">
+      <input type="text" placeholder="Написать сообщение..." />
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
+
+  <div
+    class="chat__trigger"
+    role="button"
+    tabindex="0"
+    aria-label="Открыть чат"
+  >
+    <Image src="chat.png" />
+  </div>
+</div>

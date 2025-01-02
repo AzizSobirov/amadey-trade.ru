@@ -1,0 +1,67 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import Breadcrumb from "../components/TheBreadcrumb.astro";
+
+const services = [
+  "Дизайн <br/> интерьера",
+  "Подбор мебели <br/>  по фотографии",
+  "Изготовление <br/>  по индивидуальным размерам",
+  "Комплект <br/>  рабочих чертежей",
+  "Вывоз мусора <br/>  и упаковки",
+  "Выезд <br/>  специалиста",
+];
+---
+
+<App title="Услуги">
+  <main>
+    <!-- Services -->
+    <Section name="services">
+      <Breadcrumb list={[{ name: "Услуги", href: "#" }]} />
+
+      <H1>Услуги</H1>
+
+      <div class="services__list">
+        {
+          services.map((service, index) => (
+            <a href="/service" class="services__list-item">
+              <div class="bg-img">
+                <Image src={`services/${index + 1}-lg.png`} />
+              </div>
+
+              <div class="text-title" set:html={service} />
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="services__footer">
+        <div class="services__footer-item group">
+          <div class="group__text">
+            <div class="group__text-title">
+              бесплатная
+              <strong>консультация</strong>
+            </div>
+            <div class="group__text-desc">
+              Подробно расскажем об услугах, ценах и подберем для вас то, что
+              нужно
+            </div>
+            <a href="#" class="btn">Заказать</a>
+          </div>
+          <Image class="group__img" src="services/7-lg.png" />
+        </div>
+
+        <div class="services__footer-item group">
+          <div class="group__text">
+            <div class="group__text-title">
+              Посмотрите
+              <strong> Каталог мебели</strong>
+            </div>
+            <a href="#" class="btn">Смотреть</a>
+          </div>
+          <Image class="group__img" src="services/8-lg.png" />
+        </div>
+      </div>
+    </Section>
+  </main>
+</App>

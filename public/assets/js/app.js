@@ -128,6 +128,22 @@ if (header) {
   }
 }
 
+// chat
+const chat = document.querySelector(".chat");
+if (chat) {
+  const trigger = chat.querySelector(".chat__trigger");
+  const chatContent = chat.querySelector(".chat__content");
+  const chatContentClose = chat.querySelector(".chat__content-close");
+
+  trigger.addEventListener("click", () => {
+    chatContent.classList.toggle("active");
+  });
+
+  chatContentClose.addEventListener("click", () => {
+    chatContent.classList.remove("active");
+  });
+}
+
 // Intro Swiper
 let introSwiper = new Swiper(".intro__swiper .swiper", {
   slidesPerView: 1,

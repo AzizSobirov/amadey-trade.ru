@@ -2,6 +2,7 @@
 import TheFooter from "./components/TheFooter.astro";
 import TheModal from "./components/TheModal.astro";
 import TheHeader from "./components/TheHeader.astro";
+import TheChat from "./components/TheChat.astro";
 import "../public/assets/scss/app.scss";
 
 const version = Math.random().toString(16).slice(10);
@@ -42,6 +43,8 @@ const { title } = Astro.props;
     <slot />
     <!-- TheFooter -->
     <TheFooter />
+    <!-- TheChat -->
+    <TheChat />
     <slot name="footer" />
     <!-- TheScripts -->
     {scripts.map((script) => <script src={script} />)}

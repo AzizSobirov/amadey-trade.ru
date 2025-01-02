@@ -1,0 +1,144 @@
+.chat {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 40px;
+
+  @include media("sm") {
+    bottom: 20px;
+    right: 20px;
+    gap: 20px;
+  }
+
+  &__trigger {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    --icon-size: 100%;
+
+    @include media("sm") {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    margin-right: 40px;
+    padding: 24px;
+    width: 100%;
+    max-width: 470px;
+    color: #fff;
+    background: var(--text-color);
+    border-radius: 15px 15px 0 15px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+
+    @include media("sm") {
+      width: 100%;
+      max-width: calc(100% - 40px);
+      margin-right: -5px;
+      border-radius: 10px;
+      gap: 10px;
+    }
+    @include media("xs") {
+      width: 100vw;
+    }
+
+    &.active {
+      display: flex;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      right: 0;
+      z-index: -1;
+      background-image: url('data:image/svg+xml,<svg width="63" height="101" viewBox="0 0 63 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M52.3414 97.8682L1.72975 35.5126C-0.694406 32.5259 0.27849 28.0617 3.72559 26.3546L54.3372 1.29007C58.3253 -0.684926 63 2.21657 63 6.66685V94.087C63 99.7374 55.9023 102.255 52.3414 97.8682Z" fill="%231A2F53" /></svg>');
+      background-position: bottom right;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 63px;
+      height: 101px;
+
+      @include media("sm") {
+        display: none;
+      }
+    }
+
+    &-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      opacity: 0.4;
+    }
+
+    &-title {
+      font-weight: 400;
+      font-size: 18px;
+      color: #bbd6ff;
+
+      @include media("sm") {
+        font-size: 16px;
+      }
+    }
+
+    &-desc {
+      padding-right: 10px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 156%;
+
+      @include media("sm") {
+        font-size: 14px;
+      }
+    }
+
+    &-form {
+      width: 100%;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 8px;
+
+      @include media("xs") {
+        flex-direction: column;
+      }
+
+      input {
+        flex-grow: 1;
+        padding: 16px 20px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+
+        @include media("sm") {
+          padding: 10px 12px;
+          width: auto;
+          font-size: 14px;
+        }
+      }
+
+      button {
+        padding: 10px 15px;
+        color: var(--text-color);
+        font-size: 18px;
+        font-weight: 600;
+        font-family: var(--font-secondary);
+        background: #fff;
+        border-radius: 7px;
+
+        @include media("sm") {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
