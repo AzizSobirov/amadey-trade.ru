@@ -20,6 +20,7 @@
     line-height: 140%;
     letter-spacing: 0.02em;
     color: #5c6678;
+    transition: var(--transition-ease);
 
     @include media("xs") {
       font-size: 12px;
@@ -27,6 +28,10 @@
 
     &:last-child {
       font-weight: 500;
+    }
+
+    &:hover {
+      color: #0e34ff;
     }
   }
 

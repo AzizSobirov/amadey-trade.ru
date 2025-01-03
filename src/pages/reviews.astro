@@ -1,0 +1,299 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import Breadcrumb from "../components/TheBreadcrumb.astro";
+---
+
+<App title="Отзывы">
+  <main>
+    <!-- Reviews -->
+    <Section name="reviews">
+      <Breadcrumb list={[{ name: "Отзывы", href: "#" }]} />
+
+      <H1>Отзывы</H1>
+
+      <div class="reviews__list">
+        <div class="reviews__list-column">
+          <div class="reviews__list-item group">
+            <div class="group-date">март 2021</div>
+            <p class="group-desc">
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, отражает фундаментальность, респектабельность, и,
+              безусловно, передаст этот образ обладателю.
+            </p>
+            <div class="group__author">
+              <img
+                class="group__author-img"
+                src="./assets/img/reviews/1.png"
+                alt="Артур М."
+                loading="lazy"
+              />
+              <div class="group__author-info">
+                <div class="group__author-name">Артур М.</div>
+                <div class="group__author-job">
+                  Директор <br /> дизайн-студии
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews__list-item group">
+            <div class="group-date">июль 2020</div>
+            <p class="group-desc">
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, он отражает фундаментальность и
+              респектабельность, и, безусловно, передаст этот образ обладателю.
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, он отражает фундаментальность и
+              респектабельность, и, безусловно, передаст этот образ обладателю.
+            </p>
+            <div class="group__author">
+              <img
+                class="group__author-img"
+                src="./assets/img/reviews/2.png"
+                alt="Вера Р."
+                loading="lazy"
+              />
+              <div class="group__author-info">
+                <div class="group__author-name">Вера Р.</div>
+                <div class="group__author-job">
+                  Директор <br /> дизайн-студии
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews__list-item group">
+            <div class="group-date">март 2021</div>
+            <p class="group-desc">
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, отражает фундаментальность, респектабельность, и,
+              безусловно, передаст этот образ обладателю.
+            </p>
+            <div class="group__author">
+              <img
+                class="group__author-img"
+                src="./assets/img/reviews/1.png"
+                alt="Артур М."
+                loading="lazy"
+              />
+              <div class="group__author-info">
+                <div class="group__author-name">Артур М.</div>
+                <div class="group__author-job">
+                  Директор <br /> дизайн-студии
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews__list-item group">
+            <div class="group-date">июль 2020</div>
+            <p class="group-desc">
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, он отражает фундаментальность и
+              респектабельность, и, безусловно, передаст этот образ обладателю.
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, он отражает фундаментальность и
+              респектабельность, и, безусловно, передаст этот образ обладателю.
+            </p>
+            <div class="group__author">
+              <img
+                class="group__author-img"
+                src="./assets/img/reviews/2.png"
+                alt="Вера Р."
+                loading="lazy"
+              />
+              <div class="group__author-info">
+                <div class="group__author-name">Вера Р.</div>
+                <div class="group__author-job">
+                  Директор <br /> дизайн-студии
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews__list-column">
+          <div class="reviews__list-item group">
+            <div class="group-date">июль 2020</div>
+            <p class="group-desc">
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, он отражает фундаментальность и
+              респектабельность, и, безусловно, передаст этот образ обладателю.
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, он отражает фундаментальность и
+              респектабельность, и, безусловно, передаст этот образ обладателю.
+            </p>
+            <div class="group__author">
+              <img
+                class="group__author-img"
+                src="./assets/img/reviews/2.png"
+                alt="Вера Р."
+                loading="lazy"
+              />
+              <div class="group__author-info">
+                <div class="group__author-name">Вера Р.</div>
+                <div class="group__author-job">
+                  Директор <br /> дизайн-студии
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews__list-item group">
+            <div class="group-date">март 2021</div>
+            <p class="group-desc">
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, отражает фундаментальность, респектабельность, и,
+              безусловно, передаст этот образ обладателю.
+            </p>
+            <div class="group__author">
+              <img
+                class="group__author-img"
+                src="./assets/img/reviews/1.png"
+                alt="Артур М."
+                loading="lazy"
+              />
+              <div class="group__author-info">
+                <div class="group__author-name">Артур М.</div>
+                <div class="group__author-job">
+                  Директор <br /> дизайн-студии
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews__list-item group">
+            <div class="group-date">июль 2020</div>
+            <p class="group-desc">
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, он отражает фундаментальность и
+              респектабельность, и, безусловно, передаст этот образ обладателю.
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, он отражает фундаментальность и
+              респектабельность, и, безусловно, передаст этот образ обладателю.
+            </p>
+            <div class="group__author">
+              <img
+                class="group__author-img"
+                src="./assets/img/reviews/2.png"
+                alt="Вера Р."
+                loading="lazy"
+              />
+              <div class="group__author-info">
+                <div class="group__author-name">Вера Р.</div>
+                <div class="group__author-job">
+                  Директор <br /> дизайн-студии
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews__list-column">
+          <div class="reviews__list-item group">
+            <div class="group-date">март 2021</div>
+            <p class="group-desc">
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, отражает фундаментальность, респектабельность, и,
+              безусловно, передаст этот образ обладателю.
+            </p>
+            <div class="group__author">
+              <img
+                class="group__author-img"
+                src="./assets/img/reviews/1.png"
+                alt="Артур М."
+                loading="lazy"
+              />
+              <div class="group__author-info">
+                <div class="group__author-name">Артур М.</div>
+                <div class="group__author-job">
+                  Директор <br /> дизайн-студии
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews__list-item group">
+            <div class="group-date">июль 2020</div>
+            <p class="group-desc">
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, он отражает фундаментальность и
+              респектабельность, и, безусловно, передаст этот образ обладателю.
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, он отражает фундаментальность и
+              респектабельность, и, безусловно, передаст этот образ обладателю.
+            </p>
+            <div class="group__author">
+              <img
+                class="group__author-img"
+                src="./assets/img/reviews/2.png"
+                alt="Вера Р."
+                loading="lazy"
+              />
+              <div class="group__author-info">
+                <div class="group__author-name">Вера Р.</div>
+                <div class="group__author-job">
+                  Директор <br /> дизайн-студии
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews__list-item group">
+            <div class="group-date">март 2021</div>
+            <p class="group-desc">
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, отражает фундаментальность, респектабельность, и,
+              безусловно, передаст этот образ обладателю.
+            </p>
+            <div class="group__author">
+              <img
+                class="group__author-img"
+                src="./assets/img/reviews/1.png"
+                alt="Артур М."
+                loading="lazy"
+              />
+              <div class="group__author-info">
+                <div class="group__author-name">Артур М.</div>
+                <div class="group__author-job">
+                  Директор <br /> дизайн-студии
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews__list-item group">
+            <div class="group-date">июль 2020</div>
+            <p class="group-desc">
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, он отражает фундаментальность и
+              респектабельность, и, безусловно, передаст этот образ обладателю.
+              Выполнен в классическом стиле дизайн моего офиса не подвержен
+              влиянию времени, он отражает фундаментальность и
+              респектабельность, и, безусловно, передаст этот образ обладателю.
+            </p>
+            <div class="group__author">
+              <img
+                class="group__author-img"
+                src="./assets/img/reviews/2.png"
+                alt="Вера Р."
+                loading="lazy"
+              />
+              <div class="group__author-info">
+                <div class="group__author-name">Вера Р.</div>
+                <div class="group__author-job">
+                  Директор <br /> дизайн-студии
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn variant-solid" role="button" aria-label="Читать еще">
+        Читать еще 15 отзывов
+      </div>
+    </Section>
+  </main>
+</App>

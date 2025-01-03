@@ -57,7 +57,7 @@ import Breadcrumb from "../components/TheBreadcrumb.astro";
             <tbody>
               <tr>
                 <td>Базовый</td>
-                <td>Концепт скетч, <br> Материалы, <br> Цвета</td>
+                <td>Концепт скетч, <br /> Материалы, <br /> Цвета</td>
                 <td>2 тыс./ м<sup>2</sup></td>
               </tr>
               <tr>
@@ -73,7 +73,8 @@ import Breadcrumb from "../components/TheBreadcrumb.astro";
               <tr>
                 <td>Хай-энд</td>
                 <td
-                  >Базовый + 3D фото + смета <br> + 3D видео в любых ракурсах + свет</td
+                  >Базовый + 3D фото + смета <br /> + 3D видео в любых ракурсах +
+                  свет</td
                 >
                 <td>8 тыс./ м<sup>2</sup></td>
               </tr>
@@ -95,7 +96,19 @@ import Breadcrumb from "../components/TheBreadcrumb.astro";
 
     <!-- Calculate -->
     <Section name="calculate">
-      .calculate
+      <div class="calculate__text">
+        <div class="calculate__text-title">подберем вам дизайн</div>
+        <p class="calculate__text-desc">исходя из ваших пожеланий</p>
+      </div>
+      <form class="calculate__form">
+        <input type="text" name="name" placeholder="Ваше имя" />
+        <input type="text" name="phone" placeholder="Номер телефона" />
+        <button type="submit">Рассчитать стоимость</button>
+        <label for="chbx">
+          <input type="checkbox" name="chbx" id="chbx" />
+          <span>Согласен на обработку <a href="#">персональных данных</a></span>
+        </label>
+      </form>
     </Section>
   </main>
 </App>

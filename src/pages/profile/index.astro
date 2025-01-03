@@ -1,0 +1,53 @@
+---
+import App from "../../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import Breadcrumb from "../../components/TheBreadcrumb.astro";
+---
+
+<App title="Личный кабинет">
+  <main>
+    <!-- profile -->
+    <Section name="profile">
+      <Breadcrumb list={[{ name: "Личный кабинет", href: "#" }]} />
+      <H1>Личный кабинет</H1>
+      <div class="profile__wrapper">
+        <aside class="profile__aside">
+          <nav class="profile__aside-nav">
+            <a href="/profile" class="profile__aside-link active"> Профиль </a>
+            <a href="/profile/orders" class="profile__aside-link"> Заказы </a>
+            <a href="/profile/cart" class="profile__aside-link"> Корзина </a>
+            <a href="/profile/favourites" class="profile__aside-link">
+              Вам понравилось
+            </a>
+          </nav>
+        </aside>
+
+        <div class="profile__content">
+          <form class="profile__form">
+            <div class="profile__form-group">
+              <input type="text" name="fullname" placeholder="ФИО" />
+              <input type="text" name="phone" placeholder="Номер телефона" />
+              <input type="text" name="email" placeholder="Электронная почта" />
+            </div>
+
+            <div class="profile__form-group">
+              <span>Адрес</span>
+              <input
+                type="text"
+                name="address"
+                placeholder="Город, улица, дом"
+              />
+              <div class="flex-row">
+                <input type="text" name="entrance" placeholder="Подъезд" />
+                <input type="text" name="floor" placeholder="Этаж" />
+                <input type="text" name="apartment" placeholder="Квартира" />
+              </div>
+            </div>
+
+            <button type="submit">Сохранить</button>
+          </form>
+        </div>
+      </div>
+    </Section>
+  </main>
+</App>

@@ -1,0 +1,73 @@
+---
+import App from "../App.astro";
+import { Section, Image, Icon, H1, H2, H3, H4 } from "ui";
+import Breadcrumb from "../components/TheBreadcrumb.astro";
+---
+
+<App title="Контакты">
+  <main>
+    <!-- Contacts -->
+    <Section name="contacts">
+      <Breadcrumb list={[{ name: "Контакты", href: "#" }]} />
+
+      <div class="contacts__content">
+        <div class="contacts__details">
+          <H1>Контакты</H1>
+
+          <div class="contacts__details-item">
+            <strong>Адрес:</strong>
+            <p>Казань, ул. Сулеймановой. д. 3</p>
+          </div>
+
+          <div class="contacts__details-item">
+            <strong>Время работы шоу рума:</strong>
+            <p>Понедельник-Пятница, 9:00 — 18:00</p>
+          </div>
+
+          <div class="contacts__details-item">
+            <strong>Телефоны:</strong>
+            <span
+              ><a href="tel:88003020528">8-800-302-05-28</a> (бесплатный) <br />
+              <a href="tel:+78435283132">+7(843) 528-31-32</a></span
+            >
+          </div>
+
+          <div class="contacts__details-item">
+            <strong>WhatsApp, Telegram, Viber:</strong>
+            <a href="tel:+79393850087">+7 (939) 385-00-87</a>
+            <Image src="whatsapp-qr.svg" />
+          </div>
+        </div>
+
+        <div class="contacts__map">
+          <iframe
+            src="https://yandex.uz/map-widget/v1/?ll=49.090217%2C55.813981&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjI2Mjc4MhKAAdCg0L7RgdGB0LjRjywg0KDQtdGB0L_Rg9Cx0LvQuNC60LAg0KLQsNGC0LDRgNGB0YLQsNC9ICjQotCw0YLQsNGA0YHRgtCw0L0pLCDQmtCw0LfQsNC90YwsINGD0LvQuNGG0LAg0KHRg9C70LXQudC80LDQvdC-0LLQvtC5LCAzIgoN81tEQhV8QV9C&z=16.79"
+            width="560"
+            height="400"
+            allowfullscreen="true"></iframe>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Application -->
+    <Section name="application">
+      <div class="application__text">
+        <div class="application__text-title">Оставьте свои контакты</div>
+        <p class="application__text-desc">мы перезвоним вам в течение дня</p>
+      </div>
+      <form class="application__form">
+        <input type="text" name="name" placeholder="Ваше имя" />
+        <input type="text" name="phone" placeholder="Номер телефона" />
+        <textarea
+          name="message"
+          placeholder="Опишите ваше пожелание или оставьте комментарий"
+        ></textarea>
+        <label for="chbx">
+          <input type="checkbox" name="chbx" id="chbx" />
+          <span>Согласен на обработку <a href="#">персональных данных</a></span>
+        </label>
+        <button type="submit">Отправить</button>
+      </form>
+    </Section>
+  </main>
+</App>
